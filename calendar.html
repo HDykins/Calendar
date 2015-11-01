@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    $light-grey: rgb(200,200,200);
+    
+              @media (max-width: 530px) {
+.row{
+font-size: 1rem;
+}
+    }
+          @media (min-width: 531px) {
+.row{
+font-size: 1.2rem;
+}
+    }
+   
+      @media (min-width: 768px) {
+.row{
+font-size: 1.6rem;
+}
+    }
+    
+        @media (min-width: 992px) {
+.row{
+font-size: 2rem;
+}
+    }  
+    
+    #mainPadding{
+      padding-left:25px;
+      padding-right:25px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 10vh;
+
+    }
+     .container-fluid {
+      height: 52vh;
+      padding: 10px;
+      position: absolute;
+      width:100%;
+    }
+    .row {
+            height: 25%;
+    }
+    div .col-xs-1 {
+      height: 100%;
+      width: 14.28571%;
+      padding:3px;
+
+    }
+     .box {  
+      height: 100%;
+      border: solid black 2px;
+
+    }
+     .monthBox {
+      height: 100%;
+      border: solid black 2px;
+    }
+      div .col-xs-12 {
+      height: 100%;
+              padding:3px;
+    }
+    .heading {
+      font-size: 2.5rem;
+      padding:0;
+      margin:0;
+      line-height:10vh;
+    }
+    .greyBox{
+      border: solid purple 5px;
+    }
+
+  .shadedBox {
+    background-color: grey;
+    border: solid black 2px;
+  }
+  .dayBox {
+    border: solid black 2px;
+  }
+    
+    </style>
+  <script>
+    setTimeout(function () {
+
+      var bootstrapImport = document.createElement("link")
+      var bootstrapImportHref = bootstrapImport.setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+      var bootstrapImportRel = bootstrapImport.setAttribute("rel", "stylesheet");
+      document.head.appendChild(bootstrapImport);
+      
+      var days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      
+      var mainDiv = document.createElement("div");
+      var mainDivClass = mainDiv.setAttribute("class", "container-fluid");
+      var divClass = mainDiv.setAttribute("id", "mainPadding");
+
+      
+      var topRow = document.createElement("div");
+      var topRowClass = topRow.setAttribute("class", "row");
+      var topRowId = topRow.setAttribute("id", "row1");
+      var monthDiv = document.createElement("div");
+      var monthDivClass = monthDiv.setAttribute("class", "col-xs-12"); 
+      var monthDivId = monthDiv.setAttribute("id", "divMonth");
+      var monthBox = document.createElement("div");
+      var monthBoxClass = monthBox.setAttribute("class", "monthBox"); 
+      var monthBoxId = monthBox.setAttribute("id", "monthBox");
+      var heading = document.createElement("h1");
+      var headingClass = heading.setAttribute("class", "heading"); 
+      var headingId = heading.setAttribute("id", "headingId");
+      var textBox = document.createTextNode("November 2015");
+      heading.appendChild(textBox);
+      monthBox.appendChild(heading);
+      monthDiv.appendChild(monthBox); 
+      topRow.appendChild(monthDiv); 
+      mainDiv.appendChild(topRow);  
+      
+      
+      var boxNum = 1; 
+      
+      for(iterator=2; iterator<9; iterator=iterator+1) {
+
+        var topRow = document.createElement("div");
+        var topRowClass = topRow.setAttribute("class", "row");
+        var topRowId = topRow.setAttribute("id", "row"+iterator);
+
+
+        for(counter=1; counter<8; counter=counter+1) {
+
+          var dayDiv = document.createElement("div");
+          var dayDivClass = dayDiv.setAttribute("class", "col-xs-1"); 
+          var dayDivId = dayDiv.setAttribute("id", "div"+"Box"+""+(boxNum+counter-1));   
+          var box = document.createElement("div");
+          var boxClass = box.setAttribute("class", "box"); 
+          var boxId = box.setAttribute("id", "box"+(counter+boxNum-1));
+
+          if (boxNum<8) {
+            var textBox = document.createTextNode(days[counter-1]);
+            box.appendChild(textBox);
+            box.setAttribute("class", "dayBox"); 
+          }
+          if (counter>6 && iterator===3) {
+            var textBox = document.createTextNode((counter-6)+(7*(iterator-3)));
+            box.appendChild(textBox);
+
+          } else if (iterator>3 & iterator<8) {
+            var textBox = document.createTextNode((counter-6)+(7*(iterator-3)));
+            box.appendChild(textBox);
+
+          } else if (counter<2 & iterator===8) {
+            var textBox = document.createTextNode((counter-6)+(7*(iterator-3)));
+            box.appendChild(textBox);
+          }
+          if(boxNum<15 && boxNum>7 && counter<7) {
+            var textBox = document.createTextNode("&nbsp");
+            box.setAttribute("class", "greyBox");
+            box.appendChild(textBox);  
+          } else if (boxNum>36 && counter>1) {
+            var textBox = document.createTextNode("&nbsp");
+            box.setAttribute("class", "greyBox");
+            box.appendChild(textBox);  
+          }    
+          dayDiv.appendChild(box); 
+          topRow.appendChild(dayDiv); 
+        }
+        
+
+        mainDiv.appendChild(topRow);  
+        boxNum = boxNum +7;  
+      }
+      document.body.appendChild(mainDiv);
+
+
+
+var classSelector = document.querySelector("div");
+
+// false - bubbling phase
+// true - capturing phase
+var eventFlow = false;
+var right=1;
+var left=3;
+
+// Add event listener to <ul> element
+
+classSelector.addEventListener('click', function (event) {
+  var targetElement = event.target;
+
+
+  if (targetElement.getAttribute('class') === 'box') {
+console.log(counter);
+
+
+var shadedBoxClass = targetElement.setAttribute("class", "shadedBox");
+
+    } else if (targetElement.getAttribute('class') === 'shadedBox') {
+      var BoxClass = targetElement.setAttribute("class", "box");
+    }
+
+
+}, eventFlow);
+      
+      
+                }, 0);
+      </script>
+</head>
+  
+<body>
+
+</body>
+</html>
