@@ -42,6 +42,26 @@ font-size: 2rem;
       padding: 10px;
       position: absolute;
       width:100%;
+      background-color: white;
+            z-index: -1;
+
+    }
+      .form {
+      position: absolute;
+      width:80%;
+      background-color: white;
+      margin: 0 10% 0 10%;
+      top: 12vh;
+    }
+          .formSectionBottom {
+            border: solid black 4px;
+    padding: 10px;
+      height: 60vh;
+      background-color: white;
+
+    }
+    .comments {
+      text-align: center;
     }
     .row {
             height: 25%;
@@ -70,6 +90,7 @@ font-size: 2rem;
       padding:0;
       margin:0;
       line-height:10vh;
+      text-align: center;
     }
     .greyBox{
       border: solid purple 5px;
@@ -79,8 +100,12 @@ font-size: 2rem;
     background-color: grey;
     border: solid black 2px;
   }
-  .dayBox {
+  .blackBox {
     border: solid black 2px;
+  }
+  .formSectionTop {
+    border: solid black 4px;
+    padding: 10px;
   }
     
     </style>
@@ -98,6 +123,52 @@ font-size: 2rem;
       var mainDivClass = mainDiv.setAttribute("class", "container-fluid");
       var divClass = mainDiv.setAttribute("id", "mainPadding");
 
+      var ammendForm = document.createElement("div");
+      var ammendFormClass = ammendForm.setAttribute("class", "form");
+      var ammendFormId = ammendForm.setAttribute("id", "ammendForm");
+
+      var ammendFormTopRow = document.createElement("div");
+      var ammendFormtTopRowClass = ammendFormTopRow.setAttribute("class", "formSectionTop");
+      var ammendFormTopRowId = ammendFormTopRow.setAttribute("id", "ammend-top-row");
+
+      var ammendFormBottomRow = document.createElement("div");
+      var ammendFormtBottomRowClass = ammendFormBottomRow.setAttribute("class", "formSectionBottom");
+      var ammendFormBottomRowId = ammendFormBottomRow.setAttribute("id", "ammend-bottom-row");
+      var textBox = document.createTextNode("YOUR FULL-DAY EVENT");
+      ammendFormBottomRow.appendChild(textBox);
+
+      var formHeading = document.createElement("h3");
+      var formHeadingClass = formHeading.setAttribute("class", "heading");
+      var formHeadingId = formHeading.setAttribute("id", "ammend-form-heading");
+      var textBox = document.createTextNode("November 2015");
+      formHeading.appendChild(textBox);
+
+      var eventForm = document.createElement("form");
+      var eventFormClass = eventForm.setAttribute("class", "comments");
+      var eventBox = document.createElement("textarea");
+      var eventBoxName = eventBox.setAttribute("name", "comments");
+      var eventBoxId = eventBox.setAttribute("id", "comments");
+      var eventBoxRequired = eventBox.setAttribute("required", "required");
+      var eventBoxWidth = eventBox.setAttribute("style", "width:90%");
+      var close = document.createElement("input");
+      var closeType = close.setAttribute("name", "submit");
+      var closeValue = close.setAttribute("value", "Close");
+      var edit = document.createElement("input");
+      var editType = edit.setAttribute("name", "submit");
+      var editValue = edit.setAttribute("value", "Edit"); 
+      var remove = document.createElement("input");
+      var removeType = remove.setAttribute("name", "submit");
+      var removeValue = remove.setAttribute("value", "Remove");
+      eventForm.appendChild(eventBox);
+      eventForm.appendChild(close); 
+      eventForm.appendChild(edit);     
+      eventForm.appendChild(remove);
+      ammendFormBottomRow.appendChild(eventForm);
+
+      ammendFormTopRow.appendChild(formHeading);
+      ammendForm.appendChild(ammendFormTopRow);
+      ammendForm.appendChild(ammendFormBottomRow);
+      document.body.appendChild(ammendForm);
       
       var topRow = document.createElement("div");
       var topRowClass = topRow.setAttribute("class", "row");
@@ -140,7 +211,7 @@ font-size: 2rem;
           if (boxNum<8) {
             var textBox = document.createTextNode(days[counter-1]);
             box.appendChild(textBox);
-            box.setAttribute("class", "dayBox"); 
+            box.setAttribute("class", "blackBox"); 
           }
           if (counter>6 && iterator===3) {
             var textBox = document.createTextNode((counter-6)+(7*(iterator-3)));
@@ -175,13 +246,11 @@ font-size: 2rem;
 
 
 
-var classSelector = document.querySelector("div");
+var classSelector = document.querySelector("#mainPadding");
 
 // false - bubbling phase
 // true - capturing phase
 var eventFlow = false;
-var right=1;
-var left=3;
 
 // Add event listener to <ul> element
 
@@ -194,6 +263,49 @@ console.log(counter);
 
 
 var shadedBoxClass = targetElement.setAttribute("class", "shadedBox");
+
+var blankForm = document.createElement("div");
+      var blankFormClass = blankForm.setAttribute("class", "form");
+      var blankFormId = blankForm.setAttribute("id", "blankForm");
+
+      var blankFormTopRow = document.createElement("div");
+      var blankFormtTopRowClass = blankFormTopRow.setAttribute("class", "formSectionTop");
+      var blankFormTopRowId = blankFormTopRow.setAttribute("id", "blank-top-row");
+
+      var blankFormBottomRow = document.createElement("div");
+      var blankFormtBottomRowClass = blankFormBottomRow.setAttribute("class", "formSectionBottom");
+      var blankFormBottomRowId = blankFormBottomRow.setAttribute("id", "blank-bottom-row");
+      var textBox = document.createTextNode("What's your full day event?");
+      blankFormBottomRow.appendChild(textBox);
+
+      var formHeading = document.createElement("h3");
+      var formHeadingClass = formHeading.setAttribute("class", "heading");
+      var formHeadingId = formHeading.setAttribute("id", "blank-form-heading");
+      var textBox = document.createTextNode("November 2015");
+      formHeading.appendChild(textBox);
+
+      var eventForm = document.createElement("form");
+      var eventFormClass = eventForm.setAttribute("class", "comments");
+      var eventBox = document.createElement("textarea");
+      var eventBoxName = eventBox.setAttribute("name", "comments");
+      var eventBoxId = eventBox.setAttribute("id", "comments");
+      var eventBoxRequired = eventBox.setAttribute("required", "required");
+      var eventBoxWidth = eventBox.setAttribute("style", "width:90%");
+      var save = document.createElement("input");
+      var saveType = save.setAttribute("name", "submit");
+      var saveValue = save.setAttribute("value", "Save");
+      var cancel = document.createElement("input");
+      var cancelType = cancel.setAttribute("name", "submit");
+      var cancelValue = cancel.setAttribute("value", "Cancel"); 
+      eventForm.appendChild(eventBox);
+      eventForm.appendChild(save);     
+      eventForm.appendChild(cancel);
+      blankFormBottomRow.appendChild(eventForm);
+
+      blankFormTopRow.appendChild(formHeading);
+      blankForm.appendChild(blankFormTopRow);
+      blankForm.appendChild(blankFormBottomRow);
+      document.body.appendChild(blankForm);
 
     } else if (targetElement.getAttribute('class') === 'shadedBox') {
       var BoxClass = targetElement.setAttribute("class", "box");
