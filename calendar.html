@@ -139,7 +139,6 @@
 
     var today = new Date();
     var day = today.getDate();
-    console.log(day);
 
     var bootstrapImport = document.createElement("link")
     var bootstrapImportHref = bootstrapImport.setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
@@ -155,8 +154,7 @@
 
 
 
-
-      ///////
+      ///////Create the ammend form
 
       var ammendForm = document.createElement("div");
       var ammendFormClass = ammendForm.setAttribute("class", "form" + " " + "hide");
@@ -220,11 +218,9 @@
 
 
 
-///////////
 
 
-
-
+///////////Create the blank form
 
 
 var blankForm = document.createElement("div");
@@ -278,10 +274,7 @@ var saveId = save.setAttribute("id", "save");
 
 
 
-      /////////
-
-
-
+      /////////Create the month row
 
       
       var topRow = document.createElement("div");
@@ -307,12 +300,8 @@ var saveId = save.setAttribute("id", "save");
 
 
 
-      //////
+      //////Create the day boxes and the object
 
-
-
-
-      
       
       var boxNum = 1; 
       
@@ -375,159 +364,133 @@ var saveId = save.setAttribute("id", "save");
       document.body.appendChild(mainDiv);
 
       var idList = document.querySelectorAll(".box");
-      console.log(idList);
-
-
 
       var idListObject = {};
       var currentTargetObject = {};
 
       for(var something=0; something<idList.length; something = something+1) {
         var elementToId = idList[something].getAttribute('id');
-    // console.log(idList[something]);
-    idListObject[elementToId] = "Gibbs";
-    currentTargetObject[elementToId] = "Gribbs";
-    // console.log(idListObject);
-
+    idListObject[elementToId] = "";
+    currentTargetObject[elementToId] = "";
   }
 
 
 ///Day Selector
 
 
-var boxSelector = document.querySelector("div.container-fluid");
-console.log(boxSelector);
+//Select Calendar enclosing box and declare global variables
 var eventFlow = false;
 var currentTarget = 0;
 var currentTargetElement = 0;
 var targetId = 0;
 
+var boxSelector = document.querySelector("div.container-fluid");
 
-
-///start of click event
 
 boxSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
   var targetElement = event.target;
-  
   event.stopPropagation();
   event.preventDefault();
 
   if (targetElement.getAttribute('class') === 'box' || targetElement.getAttribute('class') === 'box redBox') {
-    console.log(counter);
+
+    //Show the blank form
     var showBlankForm = blankForm.setAttribute("class", "form" + " " + "show");
-
-    console.dir(idListObject);
-    console.log(idListObject[elementToId]);
-
+    //Get current text from object using the id of the clicked target
     var targetId = targetElement.getAttribute('id');
-    console.log(targetId);
     var currentTextValue = idListObject[targetId];
+    //Put current text in textarea node
     var textAreaNode = document.querySelector('textarea');
     textAreaNode.value = currentTextValue;
-    console.log(currentTextValue);
-    currentTarget = targetId;
+    //Store target in an object so that you can store and access multiple click targets
     currentTargetObject[targetId] = targetId;
-    console.log(currentTargetObject[targetId]);
-    console.log(currentTargetObject);
+    //Store target because it changes next click
+    currentTarget = targetId;
     currentTargetElement = targetElement;
-    console.log(targetElement);
-    var gram = "#targetId"
-    console.log(document.querySelector(targetId));
-     // Put date in header
+    //Put date in header
     var headerNode = document.querySelector('#blank-form-heading');
-    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
-    console.log(currentTargetElement.textContent);
+    headerNode.textContent = targetElement.textContent + " of November 2015"; 
   }
   
   else if (targetElement.getAttribute('class') === 'shadedBox' || targetElement.getAttribute('class') === 'shadedBox' + ' ' + 'redBox') {
-    console.log("test");
+
+    //Show the ammend form
     var showAmmendForm = ammendForm.setAttribute("class", "form" + " " + "show");
+    //Get current text from object using the id of the clicked target
     var targetId = targetElement.getAttribute('id');
     var currentTextValue = idListObject[targetId];
+    //Store current text in day box on the form
     var previewTextAreaNode = document.querySelector('p');
     previewTextAreaNode.textContent = currentTextValue;
-    
+    //Obtain target from the target object
     currentTarget =currentTargetObject[targetId];
-    console.log(currentTargetObject[targetId]);
-     // Put date in header
-      currentTargetElement = document.getElementById(currentTarget);
+    //Put date in header
+    currentTargetElement = document.getElementById(currentTarget);
     var headerNode = document.querySelector('#ammend-form-heading');
     headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
   }
-
-
-
-
-
-
-     // var textboxSelector = document.querySelector("textbox");
-
-//     var myFunction = function myFunction() {
-//       console.log(textboxSelector);
-//     }
-// var classSelector = document.querySelector ("input")
-
 }, eventFlow);
 
 
 ///Save
 
-var saveSelector = document.querySelectorAll("body");
-console.log(document.querySelector("body"));
+var saveSelector = document.querySelector("#blankForm");
 
-saveSelector[0].addEventListener('click', function (event) {
+saveSelector.addEventListener('click', function (event) {
+
+///start of click event
+
   var targetElement = event.target;
-
   event.preventDefault();  
   if (targetElement.getAttribute('value')=== 'Save') {
 
-
+    //Store user input in object
     var newText = eventBox.value;
     idListObject[currentTarget] = newText;
-    console.log(newText);
-    console.log(currentTarget);
-    console.log(idListObject);
-
-
+    //Hide the blank form and apply or remove shading from day
     var hideBlankForm = blankForm.setAttribute("class", "form" + " " + "hide");
     var shadedBoxClass = currentTargetElement.setAttribute("class", "shadedBox");
     if (day==currentTargetElement.textContent) {
-      console.log(currentTargetElement.textContent);
-      console.log(day);
-      console.log("please?")
       currentTargetElement.setAttribute("class", "shadedBox" + " " + "redBox");
     }
   }
-
-
 }, eventFlow);
 
 
 ///Cancel
 
-var cancelSelector = document.querySelector("body");
+var cancelSelector = document.querySelector("#blankForm");
 
 cancelSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
   var targetElement = event.target;
-  event.preventDefault();  
+  event.preventDefault();
+  //Hide the form
   if (targetElement.getAttribute('value')=== 'Cancel') {
     var hideBlankForm = blankForm.setAttribute("class", "form" + " " + "hide");
   }
-
 }, eventFlow);
 
 
 ///Close
 
-var cancelSelector = document.querySelector("body");
+var cancelSelector = document.querySelector("#ammendForm");
 
 cancelSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
   var targetElement = event.target;
   event.preventDefault();  
+  //Hide the form
   if (targetElement.getAttribute('value')=== 'Close') {
     var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
   }
-
 }, eventFlow);
 
 
@@ -535,13 +498,19 @@ cancelSelector.addEventListener('click', function (event) {
 
 var editSelector = document.querySelector("#ammendForm");
 editSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
   var targetElement = event.target;
   event.preventDefault(); 
   if (targetElement.getAttribute('value')=== 'Edit') {
-    console.log("works");
+
+    //Get current text from object using the id of the clicked target
     var currentTextValue = idListObject[currentTarget];
+    //Put current text in textarea node
     var textAreaNode = document.querySelector('textarea');
     textAreaNode.value = currentTextValue;
+    //Show the blank form and hide the ammend form
     var showBlankForm = blankForm.setAttribute("class", "form" + " " + "show");
     var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
     // Put date in header
@@ -554,37 +523,35 @@ editSelector.addEventListener('click', function (event) {
 
 ///Remove
 
-var removeSelector = document.querySelector("body");
+var removeSelector = document.querySelector("#ammendForm");
 
 removeSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
   var targetElement = event.target;
   event.preventDefault();  
-  currentTargetElement = document.getElementById(currentTarget);
-  if (targetElement.getAttribute('value')=== 'Remove') {
-    var textAreaNode = document.querySelector('textarea');
 
-    targetId = currentTargetObject[currentTarget];
-    console.log(currentTargetObject[currentTarget]);
+  if (targetElement.getAttribute('value')=== 'Remove') {
+
+    ///start of click event
+
+    //Set the value of the box stored in the object to empty
     idListObject[currentTargetObject[currentTarget]] = "";
+    //Hide the ammend form
     var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
-    console.log(currentTargetElement.getAttribute('id'));
-    console.log(idListObject[currentTarget]);
+    //Store a new current target so that it can be accessed later
+    currentTargetElement = document.getElementById(currentTarget);
     if (currentTargetObject[currentTarget] === currentTargetElement.getAttribute('id')) {
     var BoxClass = currentTargetElement.setAttribute("class", "box");
     if (day==currentTargetElement.textContent) {
     var BoxClass = currentTargetElement.setAttribute("class", "box" + " " + "redBox"); 
     }
-    console.log(idListObject);
   }
   }
-
 }, eventFlow);
 
-
 </script>
-
-
-
 
 </body>
 </html>
