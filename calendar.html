@@ -433,7 +433,10 @@ boxSelector.addEventListener('click', function (event) {
     console.log(targetElement);
     var gram = "#targetId"
     console.log(document.querySelector(targetId));
-
+     // Put date in header
+    var headerNode = document.querySelector('#blank-form-heading');
+    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
+    console.log(currentTargetElement.textContent);
   }
   
   else if (targetElement.getAttribute('class') === 'shadedBox' || targetElement.getAttribute('class') === 'shadedBox' + ' ' + 'redBox') {
@@ -446,6 +449,10 @@ boxSelector.addEventListener('click', function (event) {
     
     currentTarget =currentTargetObject[targetId];
     console.log(currentTargetObject[targetId]);
+     // Put date in header
+      currentTargetElement = document.getElementById(currentTarget);
+    var headerNode = document.querySelector('#ammend-form-heading');
+    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
   }
 
 
@@ -537,6 +544,10 @@ editSelector.addEventListener('click', function (event) {
     textAreaNode.value = currentTextValue;
     var showBlankForm = blankForm.setAttribute("class", "form" + " " + "show");
     var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
+    // Put date in header
+    currentTargetElement = document.getElementById(currentTarget);
+    var headerNode = document.querySelector('#blank-form-heading');
+    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
   }
 }, eventFlow);
 
