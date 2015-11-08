@@ -6,6 +6,7 @@
   <style>
     $light-grey: rgb(200,200,200);
     
+<<<<<<< HEAD
               @media (max-width: 530px) {
 .row{
 font-size: 1rem;
@@ -27,6 +28,29 @@ font-size: 1.6rem;
 .row{
 font-size: 2rem;
 }
+=======
+    @media (max-width: 530px) {
+      .row{
+        font-size: 1rem;
+      }
+    }
+    @media (min-width: 531px) {
+      .row{
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .row{
+        font-size: 1.6rem;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .row{
+        font-size: 2rem;
+      }
+>>>>>>> development
     }  
     
     #mainPadding{
@@ -37,25 +61,42 @@ font-size: 2rem;
       line-height: 10vh;
 
     }
+<<<<<<< HEAD
      .container-fluid {
+=======
+    .container-fluid {
+>>>>>>> development
       height: 52vh;
       padding: 10px;
       position: absolute;
       width:100%;
       background-color: white;
+<<<<<<< HEAD
             z-index: -1;
 
     }
       .form {
+=======
+      z-index: -1;
+
+    }
+    .form {
+>>>>>>> development
       position: absolute;
       width:80%;
       background-color: white;
       margin: 0 10% 0 10%;
       top: 12vh;
     }
+<<<<<<< HEAD
           .formSectionBottom {
             border: solid black 4px;
     padding: 10px;
+=======
+    .formSectionBottom {
+      border: solid black 4px;
+      padding: 10px;
+>>>>>>> development
       height: 60vh;
       background-color: white;
 
@@ -63,8 +104,19 @@ font-size: 2rem;
     .comments {
       text-align: center;
     }
+<<<<<<< HEAD
     .row {
             height: 25%;
+=======
+    .hide {
+      display: none;
+    }
+    .show {
+      display: inherit;
+    }
+    .row {
+      height: 25%;
+>>>>>>> development
     }
     div .col-xs-1 {
       height: 100%;
@@ -72,6 +124,7 @@ font-size: 2rem;
       padding:3px;
 
     }
+<<<<<<< HEAD
      .box {  
       height: 100%;
       border: solid black 2px;
@@ -84,6 +137,20 @@ font-size: 2rem;
       div .col-xs-12 {
       height: 100%;
               padding:3px;
+=======
+    .box {  
+      height: 100%;
+      border: solid black 2px;
+      box-shadow: 2px 2px 2px #787878;
+    }
+    .monthBox {
+      height: 100%;
+      border: solid black 2px;
+    }
+    div .col-xs-12 {
+      height: 100%;
+      padding:3px;
+>>>>>>> development
     }
     .heading {
       font-size: 2.5rem;
@@ -93,12 +160,28 @@ font-size: 2rem;
       text-align: center;
     }
     .greyBox{
+<<<<<<< HEAD
       border: solid purple 5px;
     }
 
   .shadedBox {
     background-color: grey;
     border: solid black 2px;
+=======
+      border: solid rgb(240,240,240) 2px;
+      color: white;
+    }
+
+    .shadedBox {
+     height: 100%;
+     background-color: rgb(210,220,255);
+     border: solid black 2px;
+     box-shadow: 2px 2px 2px #787878;
+   }
+   .redBox {  
+    height: 100%;
+    border: solid red 2px;
+>>>>>>> development
   }
   .blackBox {
     border: solid black 2px;
@@ -107,6 +190,7 @@ font-size: 2rem;
     border: solid black 4px;
     padding: 10px;
   }
+<<<<<<< HEAD
     
     </style>
   <script>
@@ -125,6 +209,46 @@ font-size: 2rem;
 
       var ammendForm = document.createElement("div");
       var ammendFormClass = ammendForm.setAttribute("class", "form");
+=======
+  .preview-box {
+    text-align: center;
+    margin: 10vh 0 4vh 0;
+    font-size: 4vh;
+  }
+  .button {
+   width:30vh;
+   margin: 5vh 5vh 20vh 5vh;
+   height: 10vh;
+ }
+
+</style>
+</head>
+
+<body>
+  <script>
+
+    var today = new Date();
+    var day = today.getDate();
+
+    var bootstrapImport = document.createElement("link")
+    var bootstrapImportHref = bootstrapImport.setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
+    var bootstrapImportRel = bootstrapImport.setAttribute("rel", "stylesheet");
+    document.head.appendChild(bootstrapImport);
+
+    var days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    var mainDiv = document.createElement("div");
+    var mainDivClass = mainDiv.setAttribute("class", "container-fluid");
+    var divClass = mainDiv.setAttribute("id", "mainPadding");
+
+
+
+
+      ///////Create the ammend form
+
+      var ammendForm = document.createElement("div");
+      var ammendFormClass = ammendForm.setAttribute("class", "form" + " " + "hide");
+>>>>>>> development
       var ammendFormId = ammendForm.setAttribute("id", "ammendForm");
 
       var ammendFormTopRow = document.createElement("div");
@@ -145,6 +269,7 @@ font-size: 2rem;
 
       var eventForm = document.createElement("form");
       var eventFormClass = eventForm.setAttribute("class", "comments");
+<<<<<<< HEAD
       var eventBox = document.createElement("textarea");
       var eventBoxName = eventBox.setAttribute("name", "comments");
       var eventBoxId = eventBox.setAttribute("id", "comments");
@@ -160,6 +285,36 @@ font-size: 2rem;
       var removeType = remove.setAttribute("name", "submit");
       var removeValue = remove.setAttribute("value", "Remove");
       eventForm.appendChild(eventBox);
+=======
+      var previewBox = document.createElement("p");
+      var previewBoxClass = previewBox.setAttribute("class", "preview-box");
+      var previewText = document.createTextNode("POOP");
+
+      previewBox.appendChild(previewText);
+      ammendFormBottomRow.appendChild(previewBox);
+      // var eventBoxName = eventBox.setAttribute("name", "comments");
+      // var eventBoxId = eventBox.setAttribute("id", "comments");
+      // var eventBoxRequired = eventBox.setAttribute("required", "required");
+      var close = document.createElement("button");
+      var closeClass = close.setAttribute("class", "button");
+      var closeType = close.setAttribute("type", "reset");
+      var closeValue = close.setAttribute("value", "Close");
+      var closeText = document.createTextNode("Close"); 
+      var edit = document.createElement("button");
+      var editClass = edit.setAttribute("class", "button");
+      var editType = edit.setAttribute("type", "submit");
+      var editValue = edit.setAttribute("value", "Edit"); 
+      var editText = document.createTextNode("Edit");
+      var remove = document.createElement("button");
+      var removeClass = remove.setAttribute("class", "button");
+      var removeType = remove.setAttribute("type", "clear");
+      var removeValue = remove.setAttribute("value", "Remove");
+      var removeText = document.createTextNode("Remove");
+      // eventForm.appendChild(eventBox);
+      close.appendChild(closeText);
+      edit.appendChild(editText);
+      remove.appendChild(removeText);
+>>>>>>> development
       eventForm.appendChild(close); 
       eventForm.appendChild(edit);     
       eventForm.appendChild(remove);
@@ -169,6 +324,70 @@ font-size: 2rem;
       ammendForm.appendChild(ammendFormTopRow);
       ammendForm.appendChild(ammendFormBottomRow);
       document.body.appendChild(ammendForm);
+<<<<<<< HEAD
+=======
+
+
+
+
+
+///////////Create the blank form
+
+
+var blankForm = document.createElement("div");
+var blankFormClass = blankForm.setAttribute("class", "form" + " " + "hide");
+var blankFormId = blankForm.setAttribute("id", "blankForm");
+
+var blankFormTopRow = document.createElement("div");
+var blankFormtTopRowClass = blankFormTopRow.setAttribute("class", "formSectionTop");
+var blankFormTopRowId = blankFormTopRow.setAttribute("id", "blank-top-row");
+
+var blankFormBottomRow = document.createElement("div");
+var blankFormtBottomRowClass = blankFormBottomRow.setAttribute("class", "formSectionBottom");
+var blankFormBottomRowId = blankFormBottomRow.setAttribute("id", "blank-bottom-row");
+var textBox = document.createTextNode("What's your full day event?");
+blankFormBottomRow.appendChild(textBox);
+
+var formHeading = document.createElement("h3");
+var formHeadingClass = formHeading.setAttribute("class", "heading");
+var formHeadingId = formHeading.setAttribute("id", "blank-form-heading");
+var textBox = document.createTextNode("November 2015");
+formHeading.appendChild(textBox);
+
+var eventForm = document.createElement("form");
+var eventFormClass = eventForm.setAttribute("class", "comments");
+var eventBox = document.createElement("textarea");
+var eventBoxName = eventBox.setAttribute("name", "comments");
+var eventBoxId = eventBox.setAttribute("id", "comments");
+var eventBoxWidth = eventBox.setAttribute("style", "width:100%");
+var save = document.createElement("button");
+var saveValue = save.setAttribute("value", "Save");
+var saveText = document.createTextNode("Save"); 
+var saveId = save.setAttribute("id", "save");
+      // var saveOnClick = save.setAttribute("onclick", "myFunction()");
+      var cancel = document.createElement("button");
+      var cancelValue = cancel.setAttribute("value", "Cancel");
+      var cancelText = document.createTextNode("Cancel"); 
+      save.appendChild(saveText);   
+      cancel.appendChild(cancelText);   
+      eventForm.appendChild(eventBox);
+      eventForm.appendChild(save);  
+      eventForm.appendChild(cancel);
+      blankFormBottomRow.appendChild(eventForm);
+
+      blankFormTopRow.appendChild(formHeading);
+      blankForm.appendChild(blankFormTopRow);
+      blankForm.appendChild(blankFormBottomRow);
+      document.body.appendChild(blankForm);
+
+
+
+
+
+
+      /////////Create the month row
+
+>>>>>>> development
       
       var topRow = document.createElement("div");
       var topRowClass = topRow.setAttribute("class", "row");
@@ -188,7 +407,17 @@ font-size: 2rem;
       monthDiv.appendChild(monthBox); 
       topRow.appendChild(monthDiv); 
       mainDiv.appendChild(topRow);  
+<<<<<<< HEAD
       
+=======
+
+
+
+
+
+      //////Create the day boxes and the object
+
+>>>>>>> development
       
       var boxNum = 1; 
       
@@ -205,7 +434,17 @@ font-size: 2rem;
           var dayDivClass = dayDiv.setAttribute("class", "col-xs-1"); 
           var dayDivId = dayDiv.setAttribute("id", "div"+"Box"+""+(boxNum+counter-1));   
           var box = document.createElement("div");
+<<<<<<< HEAD
           var boxClass = box.setAttribute("class", "box"); 
+=======
+          if ((counter-6)+(7*(iterator-3))===day)
+          {
+            var boxClass = box.setAttribute("class", "box" + " " + "redBox"); 
+          }
+          else {
+            boxClass = box.setAttribute("class", "box"); 
+          }
+>>>>>>> development
           var boxId = box.setAttribute("id", "box"+(counter+boxNum-1));
 
           if (boxNum<8) {
@@ -226,11 +465,19 @@ font-size: 2rem;
             box.appendChild(textBox);
           }
           if(boxNum<15 && boxNum>7 && counter<7) {
+<<<<<<< HEAD
             var textBox = document.createTextNode("&nbsp");
             box.setAttribute("class", "greyBox");
             box.appendChild(textBox);  
           } else if (boxNum>36 && counter>1) {
             var textBox = document.createTextNode("&nbsp");
+=======
+            var textBox = document.createTextNode("-");
+            box.setAttribute("class", "greyBox");
+            box.appendChild(textBox);  
+          } else if (boxNum>36 && counter>1) {
+            var textBox = document.createTextNode("-");
+>>>>>>> development
             box.setAttribute("class", "greyBox");
             box.appendChild(textBox);  
           }    
@@ -244,6 +491,7 @@ font-size: 2rem;
       }
       document.body.appendChild(mainDiv);
 
+<<<<<<< HEAD
 
 
 var classSelector = document.querySelector("#mainPadding");
@@ -320,6 +568,197 @@ var blankForm = document.createElement("div");
 </head>
   
 <body>
+=======
+      var idList = document.querySelectorAll(".box");
+
+      var idListObject = {};
+      var currentTargetObject = {};
+
+      for(var something=0; something<idList.length; something = something+1) {
+        var elementToId = idList[something].getAttribute('id');
+        idListObject[elementToId] = "";
+        currentTargetObject[elementToId] = "";
+      }
+
+
+///Day Selector
+
+
+//Select Calendar enclosing box and declare global variables
+var eventFlow = false;
+var currentTarget = 0;
+var currentTargetElement = 0;
+var targetId = 0;
+
+var boxSelector = document.querySelector("div.container-fluid");
+
+
+boxSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
+  var targetElement = event.target;
+  event.stopPropagation();
+  event.preventDefault();
+
+  if (targetElement.getAttribute('class') === 'box' || targetElement.getAttribute('class') === 'box redBox') {
+
+    //Show the blank form
+    var showBlankForm = blankForm.setAttribute("class", "form" + " " + "show");
+    //Get current text from object using the id of the clicked target
+    var targetId = targetElement.getAttribute('id');
+    var currentTextValue = idListObject[targetId];
+    //Put current text in textarea node
+    var textAreaNode = document.querySelector('textarea');
+    textAreaNode.value = currentTextValue;
+    //Store target in an object so that you can store and access multiple click targets
+    currentTargetObject[targetId] = targetId;
+    //Store target because it changes next click
+    currentTarget = targetId;
+    currentTargetElement = targetElement;
+    //Put date in header
+    var headerNode = document.querySelector('#blank-form-heading');
+    headerNode.textContent = targetElement.textContent + " of November 2015"; 
+  }
+  
+  else if (targetElement.getAttribute('class') === 'shadedBox' || targetElement.getAttribute('class') === 'shadedBox' + ' ' + 'redBox') {
+
+    //Show the ammend form
+    var showAmmendForm = ammendForm.setAttribute("class", "form" + " " + "show");
+    //Get current text from object using the id of the clicked target
+    var targetId = targetElement.getAttribute('id');
+    var currentTextValue = idListObject[targetId];
+    //Store current text in day box on the form
+    var previewTextAreaNode = document.querySelector('p');
+    previewTextAreaNode.textContent = currentTextValue;
+    //Obtain target from the target object
+    currentTarget =currentTargetObject[targetId];
+    //Put date in header
+    currentTargetElement = document.getElementById(currentTarget);
+    var headerNode = document.querySelector('#ammend-form-heading');
+    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
+  }
+}, eventFlow);
+
+
+///Save
+
+var saveSelector = document.querySelector("#blankForm");
+
+saveSelector.addEventListener('click', function (event) {
+
+///start of click event
+
+var targetElement = event.target;
+event.preventDefault();  
+if (targetElement.getAttribute('value')=== 'Save') {
+
+    //Store user input in object
+    var newText = eventBox.value;
+    idListObject[currentTarget] = newText;
+    //Hide the blank form and apply or remove shading from day
+    var hideBlankForm = blankForm.setAttribute("class", "form" + " " + "hide");
+    var shadedBoxClass = currentTargetElement.setAttribute("class", "shadedBox");
+    if (day==currentTargetElement.textContent) {
+      currentTargetElement.setAttribute("class", "shadedBox" + " " + "redBox");
+    }
+  }
+}, eventFlow);
+
+
+///Cancel
+
+var cancelSelector = document.querySelector("#blankForm");
+
+cancelSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
+  var targetElement = event.target;
+  event.preventDefault();
+  //Hide the form
+  if (targetElement.getAttribute('value')=== 'Cancel') {
+    var hideBlankForm = blankForm.setAttribute("class", "form" + " " + "hide");
+  }
+}, eventFlow);
+
+
+///Close
+
+var cancelSelector = document.querySelector("#ammendForm");
+
+cancelSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
+  var targetElement = event.target;
+  event.preventDefault();  
+  //Hide the form
+  if (targetElement.getAttribute('value')=== 'Close') {
+    var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
+  }
+}, eventFlow);
+
+
+///Edit
+
+var editSelector = document.querySelector("#ammendForm");
+editSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
+  var targetElement = event.target;
+  event.preventDefault(); 
+  if (targetElement.getAttribute('value')=== 'Edit') {
+
+    //Get current text from object using the id of the clicked target
+    var currentTextValue = idListObject[currentTarget];
+    //Put current text in textarea node
+    var textAreaNode = document.querySelector('textarea');
+    textAreaNode.value = currentTextValue;
+    //Show the blank form and hide the ammend form
+    var showBlankForm = blankForm.setAttribute("class", "form" + " " + "show");
+    var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
+    // Put date in header
+    currentTargetElement = document.getElementById(currentTarget);
+    var headerNode = document.querySelector('#blank-form-heading');
+    headerNode.textContent = currentTargetElement.textContent + " of November 2015"; 
+  }
+}, eventFlow);
+
+
+///Remove
+
+var removeSelector = document.querySelector("#ammendForm");
+
+removeSelector.addEventListener('click', function (event) {
+
+  ///start of click event
+
+  var targetElement = event.target;
+  event.preventDefault();  
+
+  if (targetElement.getAttribute('value')=== 'Remove') {
+
+    ///start of click event
+
+    //Set the value of the box stored in the object to empty
+    idListObject[currentTargetObject[currentTarget]] = "";
+    //Hide the ammend form
+    var hideAmmendForm = ammendForm.setAttribute("class", "form" + " " + "hide");
+    //Store a new current target so that it can be accessed later
+    currentTargetElement = document.getElementById(currentTarget);
+    if (currentTargetObject[currentTarget] === currentTargetElement.getAttribute('id')) {
+      var BoxClass = currentTargetElement.setAttribute("class", "box");
+      if (day==currentTargetElement.textContent) {
+        var BoxClass = currentTargetElement.setAttribute("class", "box" + " " + "redBox"); 
+      }
+    }
+  }
+}, eventFlow);
+
+</script>
+>>>>>>> development
 
 </body>
 </html>
