@@ -6,29 +6,6 @@
   <style>
     $light-grey: rgb(200,200,200);
     
-<<<<<<< HEAD
-              @media (max-width: 530px) {
-.row{
-font-size: 1rem;
-}
-    }
-          @media (min-width: 531px) {
-.row{
-font-size: 1.2rem;
-}
-    }
-   
-      @media (min-width: 768px) {
-.row{
-font-size: 1.6rem;
-}
-    }
-    
-        @media (min-width: 992px) {
-.row{
-font-size: 2rem;
-}
-=======
     @media (max-width: 530px) {
       .row{
         font-size: 1rem;
@@ -39,18 +16,15 @@ font-size: 2rem;
         font-size: 1.2rem;
       }
     }
-
     @media (min-width: 768px) {
       .row{
         font-size: 1.6rem;
       }
     }
-    
     @media (min-width: 992px) {
       .row{
         font-size: 2rem;
       }
->>>>>>> development
     }  
     
     #mainPadding{
@@ -61,42 +35,24 @@ font-size: 2rem;
       line-height: 10vh;
 
     }
-<<<<<<< HEAD
      .container-fluid {
-=======
-    .container-fluid {
->>>>>>> development
       height: 52vh;
       padding: 10px;
       position: absolute;
       width:100%;
       background-color: white;
-<<<<<<< HEAD
-            z-index: -1;
-
-    }
-      .form {
-=======
       z-index: -1;
-
     }
     .form {
->>>>>>> development
       position: absolute;
       width:80%;
       background-color: white;
       margin: 0 10% 0 10%;
       top: 12vh;
     }
-<<<<<<< HEAD
-          .formSectionBottom {
-            border: solid black 4px;
-    padding: 10px;
-=======
     .formSectionBottom {
       border: solid black 4px;
       padding: 10px;
->>>>>>> development
       height: 60vh;
       background-color: white;
 
@@ -104,10 +60,6 @@ font-size: 2rem;
     .comments {
       text-align: center;
     }
-<<<<<<< HEAD
-    .row {
-            height: 25%;
-=======
     .hide {
       display: none;
     }
@@ -116,7 +68,6 @@ font-size: 2rem;
     }
     .row {
       height: 25%;
->>>>>>> development
     }
     div .col-xs-1 {
       height: 100%;
@@ -124,20 +75,6 @@ font-size: 2rem;
       padding:3px;
 
     }
-<<<<<<< HEAD
-     .box {  
-      height: 100%;
-      border: solid black 2px;
-
-    }
-     .monthBox {
-      height: 100%;
-      border: solid black 2px;
-    }
-      div .col-xs-12 {
-      height: 100%;
-              padding:3px;
-=======
     .box {  
       height: 100%;
       border: solid black 2px;
@@ -150,7 +87,6 @@ font-size: 2rem;
     div .col-xs-12 {
       height: 100%;
       padding:3px;
->>>>>>> development
     }
     .heading {
       font-size: 2.5rem;
@@ -160,18 +96,9 @@ font-size: 2rem;
       text-align: center;
     }
     .greyBox{
-<<<<<<< HEAD
-      border: solid purple 5px;
-    }
-
-  .shadedBox {
-    background-color: grey;
-    border: solid black 2px;
-=======
       border: solid rgb(240,240,240) 2px;
       color: white;
     }
-
     .shadedBox {
      height: 100%;
      background-color: rgb(210,220,255);
@@ -181,7 +108,6 @@ font-size: 2rem;
    .redBox {  
     height: 100%;
     border: solid red 2px;
->>>>>>> development
   }
   .blackBox {
     border: solid black 2px;
@@ -190,26 +116,6 @@ font-size: 2rem;
     border: solid black 4px;
     padding: 10px;
   }
-<<<<<<< HEAD
-    
-    </style>
-  <script>
-    setTimeout(function () {
-
-      var bootstrapImport = document.createElement("link")
-      var bootstrapImportHref = bootstrapImport.setAttribute("href", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css");
-      var bootstrapImportRel = bootstrapImport.setAttribute("rel", "stylesheet");
-      document.head.appendChild(bootstrapImport);
-      
-      var days=["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-      
-      var mainDiv = document.createElement("div");
-      var mainDivClass = mainDiv.setAttribute("class", "container-fluid");
-      var divClass = mainDiv.setAttribute("id", "mainPadding");
-
-      var ammendForm = document.createElement("div");
-      var ammendFormClass = ammendForm.setAttribute("class", "form");
-=======
   .preview-box {
     text-align: center;
     margin: 10vh 0 4vh 0;
@@ -248,7 +154,6 @@ font-size: 2rem;
 
       var ammendForm = document.createElement("div");
       var ammendFormClass = ammendForm.setAttribute("class", "form" + " " + "hide");
->>>>>>> development
       var ammendFormId = ammendForm.setAttribute("id", "ammendForm");
 
       var ammendFormTopRow = document.createElement("div");
@@ -269,23 +174,6 @@ font-size: 2rem;
 
       var eventForm = document.createElement("form");
       var eventFormClass = eventForm.setAttribute("class", "comments");
-<<<<<<< HEAD
-      var eventBox = document.createElement("textarea");
-      var eventBoxName = eventBox.setAttribute("name", "comments");
-      var eventBoxId = eventBox.setAttribute("id", "comments");
-      var eventBoxRequired = eventBox.setAttribute("required", "required");
-      var eventBoxWidth = eventBox.setAttribute("style", "width:90%");
-      var close = document.createElement("input");
-      var closeType = close.setAttribute("name", "submit");
-      var closeValue = close.setAttribute("value", "Close");
-      var edit = document.createElement("input");
-      var editType = edit.setAttribute("name", "submit");
-      var editValue = edit.setAttribute("value", "Edit"); 
-      var remove = document.createElement("input");
-      var removeType = remove.setAttribute("name", "submit");
-      var removeValue = remove.setAttribute("value", "Remove");
-      eventForm.appendChild(eventBox);
-=======
       var previewBox = document.createElement("p");
       var previewBoxClass = previewBox.setAttribute("class", "preview-box");
       var previewText = document.createTextNode("POOP");
@@ -314,7 +202,6 @@ font-size: 2rem;
       close.appendChild(closeText);
       edit.appendChild(editText);
       remove.appendChild(removeText);
->>>>>>> development
       eventForm.appendChild(close); 
       eventForm.appendChild(edit);     
       eventForm.appendChild(remove);
@@ -324,9 +211,6 @@ font-size: 2rem;
       ammendForm.appendChild(ammendFormTopRow);
       ammendForm.appendChild(ammendFormBottomRow);
       document.body.appendChild(ammendForm);
-<<<<<<< HEAD
-=======
-
 
 
 
@@ -387,7 +271,6 @@ var saveId = save.setAttribute("id", "save");
 
       /////////Create the month row
 
->>>>>>> development
       
       var topRow = document.createElement("div");
       var topRowClass = topRow.setAttribute("class", "row");
@@ -406,10 +289,7 @@ var saveId = save.setAttribute("id", "save");
       monthBox.appendChild(heading);
       monthDiv.appendChild(monthBox); 
       topRow.appendChild(monthDiv); 
-      mainDiv.appendChild(topRow);  
-<<<<<<< HEAD
-      
-=======
+      mainDiv.appendChild(topRow);
 
 
 
@@ -417,7 +297,6 @@ var saveId = save.setAttribute("id", "save");
 
       //////Create the day boxes and the object
 
->>>>>>> development
       
       var boxNum = 1; 
       
@@ -434,9 +313,7 @@ var saveId = save.setAttribute("id", "save");
           var dayDivClass = dayDiv.setAttribute("class", "col-xs-1"); 
           var dayDivId = dayDiv.setAttribute("id", "div"+"Box"+""+(boxNum+counter-1));   
           var box = document.createElement("div");
-<<<<<<< HEAD
-          var boxClass = box.setAttribute("class", "box"); 
-=======
+
           if ((counter-6)+(7*(iterator-3))===day)
           {
             var boxClass = box.setAttribute("class", "box" + " " + "redBox"); 
@@ -444,7 +321,6 @@ var saveId = save.setAttribute("id", "save");
           else {
             boxClass = box.setAttribute("class", "box"); 
           }
->>>>>>> development
           var boxId = box.setAttribute("id", "box"+(counter+boxNum-1));
 
           if (boxNum<8) {
@@ -465,19 +341,11 @@ var saveId = save.setAttribute("id", "save");
             box.appendChild(textBox);
           }
           if(boxNum<15 && boxNum>7 && counter<7) {
-<<<<<<< HEAD
-            var textBox = document.createTextNode("&nbsp");
-            box.setAttribute("class", "greyBox");
-            box.appendChild(textBox);  
-          } else if (boxNum>36 && counter>1) {
-            var textBox = document.createTextNode("&nbsp");
-=======
             var textBox = document.createTextNode("-");
             box.setAttribute("class", "greyBox");
             box.appendChild(textBox);  
           } else if (boxNum>36 && counter>1) {
             var textBox = document.createTextNode("-");
->>>>>>> development
             box.setAttribute("class", "greyBox");
             box.appendChild(textBox);  
           }    
@@ -491,84 +359,6 @@ var saveId = save.setAttribute("id", "save");
       }
       document.body.appendChild(mainDiv);
 
-<<<<<<< HEAD
-
-
-var classSelector = document.querySelector("#mainPadding");
-
-// false - bubbling phase
-// true - capturing phase
-var eventFlow = false;
-
-// Add event listener to <ul> element
-
-classSelector.addEventListener('click', function (event) {
-  var targetElement = event.target;
-
-
-  if (targetElement.getAttribute('class') === 'box') {
-console.log(counter);
-
-
-var shadedBoxClass = targetElement.setAttribute("class", "shadedBox");
-
-var blankForm = document.createElement("div");
-      var blankFormClass = blankForm.setAttribute("class", "form");
-      var blankFormId = blankForm.setAttribute("id", "blankForm");
-
-      var blankFormTopRow = document.createElement("div");
-      var blankFormtTopRowClass = blankFormTopRow.setAttribute("class", "formSectionTop");
-      var blankFormTopRowId = blankFormTopRow.setAttribute("id", "blank-top-row");
-
-      var blankFormBottomRow = document.createElement("div");
-      var blankFormtBottomRowClass = blankFormBottomRow.setAttribute("class", "formSectionBottom");
-      var blankFormBottomRowId = blankFormBottomRow.setAttribute("id", "blank-bottom-row");
-      var textBox = document.createTextNode("What's your full day event?");
-      blankFormBottomRow.appendChild(textBox);
-
-      var formHeading = document.createElement("h3");
-      var formHeadingClass = formHeading.setAttribute("class", "heading");
-      var formHeadingId = formHeading.setAttribute("id", "blank-form-heading");
-      var textBox = document.createTextNode("November 2015");
-      formHeading.appendChild(textBox);
-
-      var eventForm = document.createElement("form");
-      var eventFormClass = eventForm.setAttribute("class", "comments");
-      var eventBox = document.createElement("textarea");
-      var eventBoxName = eventBox.setAttribute("name", "comments");
-      var eventBoxId = eventBox.setAttribute("id", "comments");
-      var eventBoxRequired = eventBox.setAttribute("required", "required");
-      var eventBoxWidth = eventBox.setAttribute("style", "width:90%");
-      var save = document.createElement("input");
-      var saveType = save.setAttribute("name", "submit");
-      var saveValue = save.setAttribute("value", "Save");
-      var cancel = document.createElement("input");
-      var cancelType = cancel.setAttribute("name", "submit");
-      var cancelValue = cancel.setAttribute("value", "Cancel"); 
-      eventForm.appendChild(eventBox);
-      eventForm.appendChild(save);     
-      eventForm.appendChild(cancel);
-      blankFormBottomRow.appendChild(eventForm);
-
-      blankFormTopRow.appendChild(formHeading);
-      blankForm.appendChild(blankFormTopRow);
-      blankForm.appendChild(blankFormBottomRow);
-      document.body.appendChild(blankForm);
-
-    } else if (targetElement.getAttribute('class') === 'shadedBox') {
-      var BoxClass = targetElement.setAttribute("class", "box");
-    }
-
-
-}, eventFlow);
-      
-      
-                }, 0);
-      </script>
-</head>
-  
-<body>
-=======
       var idList = document.querySelectorAll(".box");
 
       var idListObject = {};
@@ -758,7 +548,6 @@ removeSelector.addEventListener('click', function (event) {
 }, eventFlow);
 
 </script>
->>>>>>> development
 
 </body>
 </html>
