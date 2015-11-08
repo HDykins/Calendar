@@ -109,11 +109,11 @@
      border: solid black 2px;
      box-shadow: 2px 2px 2px #787878;
    }
-       .redBox {  
-      height: 100%;
-      border: solid red 2px;
-    }
-   .blackBox {
+   .redBox {  
+    height: 100%;
+    border: solid red 2px;
+  }
+  .blackBox {
     border: solid black 2px;
   }
   .formSectionTop {
@@ -370,9 +370,9 @@ var saveId = save.setAttribute("id", "save");
 
       for(var something=0; something<idList.length; something = something+1) {
         var elementToId = idList[something].getAttribute('id');
-    idListObject[elementToId] = "";
-    currentTargetObject[elementToId] = "";
-  }
+        idListObject[elementToId] = "";
+        currentTargetObject[elementToId] = "";
+      }
 
 
 ///Day Selector
@@ -443,9 +443,9 @@ saveSelector.addEventListener('click', function (event) {
 
 ///start of click event
 
-  var targetElement = event.target;
-  event.preventDefault();  
-  if (targetElement.getAttribute('value')=== 'Save') {
+var targetElement = event.target;
+event.preventDefault();  
+if (targetElement.getAttribute('value')=== 'Save') {
 
     //Store user input in object
     var newText = eventBox.value;
@@ -543,11 +543,11 @@ removeSelector.addEventListener('click', function (event) {
     //Store a new current target so that it can be accessed later
     currentTargetElement = document.getElementById(currentTarget);
     if (currentTargetObject[currentTarget] === currentTargetElement.getAttribute('id')) {
-    var BoxClass = currentTargetElement.setAttribute("class", "box");
-    if (day==currentTargetElement.textContent) {
-    var BoxClass = currentTargetElement.setAttribute("class", "box" + " " + "redBox"); 
+      var BoxClass = currentTargetElement.setAttribute("class", "box");
+      if (day==currentTargetElement.textContent) {
+        var BoxClass = currentTargetElement.setAttribute("class", "box" + " " + "redBox"); 
+      }
     }
-  }
   }
 }, eventFlow);
 
